@@ -30,8 +30,9 @@ function arrayXToY(start,stop,step) {
 }
 
 //rm
+//make an error on purpose to check workflow
 tests.push(function test_arrayXToY(inject) {
-	return equalCheck(arrayXToY(0,20,3),([0, 3, 6, 9, 12, 15, 18]));
+	return equalCheck(arrayXToY(0,20,3),([0, 3, 6, 9, 12, 15, 19]));
 })
 //srm
 
