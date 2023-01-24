@@ -44,7 +44,6 @@ const hoursToMS = t => t*3600000
 const daysToMS = t => t*86400000
 const addTime = (date,milliseconds) =>  new Date(date.getTime()+(milliseconds))
 
-//test edit 
 
 //add <hours> to a date object
 function addSeconds(date,seconds) {
