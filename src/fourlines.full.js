@@ -1,3 +1,6 @@
+/*
+  Collection of functions that you keep on googling for. Should be maximum 4 lines of code per function, ... maybe, ... hopefully
+*/
 var tests = []
 
 //check if objects are truely equal
