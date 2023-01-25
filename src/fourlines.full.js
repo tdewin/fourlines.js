@@ -97,6 +97,24 @@ tests.push(function test_addDays(inject) {
 //srm
 
 
+//text manipulation
+function xlsCopy(tabbedText) { 
+	return tabbedText.trim().split("\n").map( (l) => l.split("\t")) 
+}
+
+//rm
+tests.push(function test_xlsCopy(inject) {
+	let test = xlsCopy(`row 1 cell 1	row 1 cell 2
+row 2 cell 1	row 2 cell 2
+`)
+	let compare = [
+  [ 'row 1 cell 1', 'row 1 cell 2' ],
+  [ 'row 2 cell 1', 'row 2 cell 2' ]
+]
+  	return equalCheck(test,compare)
+})
+//srm
+
 //rm
 //Auto testing
 //Inject doesn't have a function yet but who knows
