@@ -123,7 +123,7 @@ function leadingZero(number,fix) {
 }
 
 //rm
-tests.push(function leadingZero(inject) {
+tests.push(function test_leadingZero(inject) {
   	return leadingZero(9,3) == "009" && leadingZero(99,3) == "099" && leadingZero(999,3) == "999" && leadingZero(9999,3) == "9999"
 })
 //srm
@@ -133,7 +133,7 @@ function leadinZero2Digit(number) {
 }
 
 //rm
-tests.push(function leadinZero2Digit(inject) {
+tests.push(function test_leadinZero2Digit(inject) {
   	return leadinZero2Digit(9) == "09" && leadinZero2Digit(99) == "99" && leadinZero2Digit(999) == "999"
 })
 //srm
