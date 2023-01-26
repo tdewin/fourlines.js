@@ -96,6 +96,23 @@ tests.push(function test_addDays(inject) {
 })
 //srm
 
+//minihumanreadable
+const decimalCutOff = (number,maxdec=2) => parseInt(number*Math.pow(10, maxdec))*1.0/Math.pow(10, maxdec)
+
+function humanReadable(number,options={maxint:10000,maxdec:2,root:1000}) {
+  const suffix= ["","K", "M", "G", "T", "P", "E", "Z", "Y", "R", "Q"]
+  let start=0
+  for(;number>options.maxint && start < suffix.length;number/=options.root) { start++ }
+  return `${decimalCutOff(number,options.maxdec)} ${suffix[start]}`.trim()
+}
+
+//rm
+tests.push(function test_humanReadable(inject) {
+	return humanReadable(935) === "935" && humanReadable(5935) === "5935" && humanReadable(75935) === "75.93 K" && humanReadable(231313231) == "231.31 M"
+})
+//srm
+
+
 
 //text manipulation
 function xlsCopy(tabbedText) { 
