@@ -115,6 +115,29 @@ tests.push(function test_humanReadable(inject) {
 
 
 //text manipulation
+function leadingZero(number,fix) {
+  let i = (""+parseInt(number))
+  let df = fix-i.length
+  if (df > 0)  { while(df--) {i="0"+i} }
+  return i
+}
+
+//rm
+tests.push(function leadingZero(inject) {
+  	return leadingZero(9,3) == "009" && leadingZero(99,3) == "099" && leadingZero(999,3) == "999" && leadingZero(9999,3) == "9999"
+})
+//srm
+
+function leadinZero2Digit(number) {
+	return (parseInt(number)<10)?"0"+number:""+number
+}
+
+//rm
+tests.push(function leadinZero2Digit(inject) {
+  	return leadinZero2Digit(9) == "09" && leadinZero2Digit(99) == "99" && leadinZero2Digit(999) == "999"
+})
+//srm
+
 function xlsCopy(tabbedText) { 
 	return tabbedText.trim().split("\n").map( (l) => l.split("\t")) 
 }
